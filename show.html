@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>我的请假凭证</title>
+    <style>
+        body {
+            background-color: #f3f3f3
+        }
+
+        #app {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #666;
+            margin-top: 40px
+        }
+
+        .card {
+            width: 76%;
+            height: 51%;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 1px solid #e3e3e3
+        }
+
+        .top {
+            text-align: left;
+            font-weight: bold;
+            padding: 16px;
+            border-bottom: 1px solid #f3f4f5
+        }
+
+        .context {
+            display: flex
+        }
+
+        .left-div {
+            flex-basis: 115px;
+            padding-left: 15px
+        }
+
+        .left-div div {
+            color: #6060ca;
+            font-size: 15px;
+            text-align: left;
+            margin-left: 10px;
+            margin-right: 22px;
+            padding-top: 20px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e3e3e3
+        }
+
+        .right-div {
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 13px;
+            padding-right: 10px;
+            font-size: 12px;
+            border-left: 1px solid #e3e3e3
+        }
+
+        .right-div div {
+            padding-bottom: 8px
+        }
+
+        .bottom {
+            margin: 33px 10px 0;
+            padding: 35px 5px 0;
+            border-top: 1px solid #e3e3e3;
+            text-align: left;
+            font-weight: bold;
+            font-size: 25px
+        }
+
+        .code img {
+            width: 112px;
+            height: 112px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="card">
+            <div class="top">广东二师请假审批通过凭证</div>
+            <div class="context">
+                <div class="left-div">
+                    <div class="name">李奕晓</div>
+                    <div class="school">文学院</div>
+                    <div class="id">20550301072</div>
+                    <div class="clazz">20语文教育B</div>
+                </div>
+                <div class="right-div">
+                    <div class="tip">请假起止时间：</div>
+                    <div class="time1">time1</div>
+                    <div class="time2">time2</div>
+                    <div class="code" onclick="linklove()"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFXUlEQVR4nO3dy24cNxAFUCvId2eR7w4gr0MBpApVl90WztkZ7mHPjC6Iag4fH5+fn79g2l9PvwF+JsEiQrCIECwi/l7//c/HtXv/9+//nhuWWy//u9hffPwUg43vm2o2XjLYVPPWv/RYhAgWEYJFhGAR8bGMvDcr042vteRg41W5j9l8J4tSPX68OPfXVLxziWARIVhECBYR68j74erKYG6zVIwOxM8Oppd07jU7th79a+qxiBAsIgSLCMEiola8R+1ryX3NWy3GO3NXmhX04GShN9NjESFYRAgWEYJFxIuK99yU7eYEkk5pX/UHled7eiwiBIsIwSJCsIioFe8354aXSuZqzdsZx++0fGytNC7frPSjf009FhGCRYRgESFYRByK95sDwYMTz6Nz3pv19YN7wty8lx6LCMEiQrCIECwiBIuI9anwwQ19Hrz1YnCJcHUdx/7lN1eiN+mxiBAsIgSLCMEiorWN0c01wTfL2Oh8rI79G4uebFC9WI9FhGARIVhECBYRtdO/ZtcEDz4KzD5GdBqP7rxa+t/mLLTmx9RjESFYRAgWEYJFRG3aTGdsN1pL7lv+zpv5/jvZ36t5anD0ZIPBc4GP9FhECBYRgkWEYBFxOLp38WNKy0E3DxDY3/rBNdamzXCJYBEhWEQIFhFr8T5otnicPRZr8Aiumw80s/canKKjeOcSwSJCsIgQLCImF6wuogPx0RNvO0Xx7B6kswX1zc1q9FhECBYRgkWEYBHx5Mj7YBnbufioObW/0/iDi2Ob9FhECBYRgkWEYBEhWET8qdsY3ZyetW98v1dq1exGoJ1bl5iPxSWCRYRgESFYRBx+0pndt2iRW7l7s4x9cP3xXvPgMYspeCPBIkKwiBAsIg7bGA1W69VaMldpfueC75udxjS4OvkmxTuXCBYRgkWEYBFRG3lfNEvLwf02m3K7BT14bEL1C59dJ63HIkKwiBAsIgSLiMM2Rp1asrqrzmA9Ptty9ByywVs3v/DZcXw9FhGCRYRgESFYRNSmzTw4BT46ReQ9808Ws5s33TwjTY9FhGARIVhECBYR68j7YBlbrfTfs2D15r0GJ8Y0z0ko3cu0GZ4hWEQIFhGCRcRhq8gHp2CXGm8afEZpiu6XefPUBT0WEYJFhGARIVhECBYRrZXQi/c8qVXldmuKformvaJ7OemxiBAsIgSLCMEi4rCYYm/2CK5BN6vawfUmX+XWtjQ5QIBnCBYRgkWEYBFxWExRa6t3gMD++tkzbXNnFxwNVtzV1948nUCPRYRgESFYRAgWEcFtjJoj79Hh79zBCDeH2hfNWr7ESmieIVhECBYRgkVEbc777Fb6g4Vqs6q9+VCyyN1r9vcG2xjxCoJFhGARIVhETI68v2dT/9kx6NkvIfeM0jR7krIeiwjBIkKwiBAsIg4j7zflZozMTuBpNn5zVUGntT0j7zxDsIgQLCIEi4jDAQJRSwHYGWVurpXNbZo4u4t/6X1WT2yYncuvxyJCsIgQLCIEiwjBImJ9KlwMbmt5fNS6trbiaPA3nOgOStVb73Uew83H4hLBIkKwiBAsIg7F+3r1xcPABjcdbW4T2nnt17fd/Flm6uIqe5DyCoJFhGARIVhE1Ir3qMGlz9GR973qDwyldzL7jDJ4YPFXeiwiBIsIwSJCsIh4UfFeGoNuVrWD5fl+SUjT7OrwzjdcfVDQYxEhWEQIFhGCRURtD9KOagXdeSfNo3tLjS9mj9PtvPbZDUv1WEQIFhGCRYRgEXEo3qNy0zaiBwjsXzs7lWVw4n/1+uYXrsciQrCIECwiBIuIFx0gwE+ixyJCsIgQLCIEiwjBIuI3FA/uLwp8NN8AAAAASUVORK5CYII="
+                            alt="" /></div>
+                </div>
+            </div>
+            <div class="bottom">进校</div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementsByClassName("time1")[0].innerText =
+    getQueryString("startyear") + "年" + getQueryString("startmonth") + "月" + getQueryString("startday") + "日" + getQueryString("starthour") + "时-";
+
+    document.getElementsByClassName("time2")[0].innerText =
+    getQueryString("endyear") +"年" + getQueryString("endmonth") + "月" + getQueryString("endday") + "日" + getQueryString("endhour") + "时";
+
+    if (getQueryString("getout") == "yes") {
+        document.getElementsByClassName("bottom")[0].innerText = "离校";
+    }
+
+    function getQueryString(name) {
+        let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        let r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return decodeURIComponent(r[2]);
+        };
+        return null;
+    }
+</script>
+
+</html>
