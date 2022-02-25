@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>生成请假凭证</title>
+  <style>
+    body {
+      background-color: #f3f3f3
+    }
+
+    #app {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #666;
+      margin-top: 40px
+    }
+
+    .card {
+      width: 76%;
+      height: 52%;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: 1px solid #e3e3e3
+    }
+
+    .top {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 1px solid #f3f4f5
+    }
+
+    .context {
+      display: flex
+    }
+
+    .context input{
+      width: 22px;
+    }
+
+    .left-div div,
+    .right-div div {
+      color: #6060ca;
+      font-size: 15px;
+      text-align: left;
+      margin-left: 10px;
+      margin-right: 22px;
+      padding-top: 20px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e3e3e3
+    }
+
+    .right-div {
+      /* text-align: left;
+      margin-top: 15px;
+      padding-left: 13px;
+      padding-right: 10px;
+      font-size: 12px;
+      border-left: 1px solid #e3e3e3 */
+    }
+
+    .bottom {
+      margin: 33px 10px 0;
+      padding: 35px 5px 0;
+      border-top: 1px solid #e3e3e3;
+      text-align: left;
+      font-size: 25px
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="card">
+      <div class="top">广东二师请假审批通过凭证</div>
+      <div class="context">
+
+        <div class="left-div">
+            <div>请假开始年：<input id="starty" type="text" /></div>
+          <div>请假开始月：<input id="startm" type="text" /></div>
+          <div>请假开始日：<input id="startd" type="text" /></div>
+          <div>请假开始时：<input id="starth" type="text" /></div>
+        </div>
+
+        <div class="right-div">
+            <div>请假结束年：<input id="endy" type="text" /></div>
+          <div>请假结束月：<input id="endm" type="text" /></div>
+          <div>请假结束日：<input id="endd" type="text" /></div>
+          <div>请假结束时：<input id="endh" type="text" /></div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <input type="button" value="生成进校" onclick="generate('no')">
+        <input type="button" value="生成离校" onclick="generate('yes')">
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function generate(getout) {
+    let starty = document.getElementById("starty").value;
+    let startm = document.getElementById("startm").value;
+    let startd = document.getElementById("startd").value;
+    let starth = document.getElementById("starth").value;
+
+    let endy = document.getElementById("endy").value;
+    let endm = document.getElementById("endm").value;
+    let endd = document.getElementById("endd").value;
+    let endh = document.getElementById("endh").value;
+    let url = "./show.html?startyear=" + starty +"&startmonth=" + startm + "&startday=" + startd + "&starthour=" + starth +
+      "&endyear=" + endy +
+      "&endmonth=" + endm + "&endday=" + endd + "&endhour=" + endh + "&getout=" + getout;
+    window.location.href = url;
+  }
+</script>
+
+</html>
